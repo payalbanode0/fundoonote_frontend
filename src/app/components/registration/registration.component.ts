@@ -25,25 +25,16 @@ export class RegistrationComponent implements OnInit {
 
   }
   OnSubmit() {
-    console.log("inside submit");
-    if (this.registerForm.valid) {
-      console.log("valid data", this.registerForm.value);
-      let data = {
-        firstName:this.registerForm.value.firstName,
-        lastName:this.registerForm.value.lastName,
-        email: this.registerForm.value.email,       
-        password: this.registerForm.value.password,
-        address:""
-      }
-    }
-    else {
-      console.log("Invalid Data", this.registerForm.value);
+    this.submitted = true;
+
+    // stop here if form is invalid
+    if (this.registerForm.invalid) {
+        return;
     }
 
-
-
-  }
+    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value))
 }
+  }
 
 
 

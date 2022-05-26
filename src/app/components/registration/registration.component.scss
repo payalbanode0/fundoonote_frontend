@@ -25,15 +25,8 @@
     border-radius: 2%;
   }
   
-  .Spacesforbutton 
-  {
-    display: flex;
-    gap: 5px 180px;
-    width: 490px;
-    color: blue;
-    margin-top: 60px;
-    //justify-content: space-between;
-  }
+ 
+  
   .imgSize
      {
        border: 5px solid yellow;
@@ -48,17 +41,18 @@
      {
        border: 0px;
        background-color: white;
-       color: blue;
+       color:#3f51b5;
        font-size: medium;
        margin-top: 5px;
      }
-    .buttonStyleforNext
-      {
-        border: 0px;
-        color: white;
-        background-color: blue;
-        height: 30px;width: 60px;
-      }
+     .buttonStyleforNext
+     {
+       border: 0px;
+       color: white;
+       background-color: blue;
+       height: 30px;width: 60px;
+     }
+    
       .account{
         display: flex;
         flex-direction: column;
@@ -79,3 +73,12 @@
        .widthforBox {
          width: 88%;
        }
+       .Spacesforbutton 
+{
+  display: flex;
+  gap: 5px 180px;
+  width: 490px;
+  color: blue;
+  margin-top: 60px;
+  //justify-content: space-between;
+}
