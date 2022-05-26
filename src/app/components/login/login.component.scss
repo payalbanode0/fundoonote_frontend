@@ -6,8 +6,7 @@
   margin-top: 50px; 
   padding-top: 30px;
     padding-bottom: 20px;
-    padding-left: 20px;
-   // align-content: center; 
+    padding-left: 20px; 
     justify-content: center;
     display: flex;
     flex-flow: column wrap;
@@ -27,13 +26,10 @@
   margin-top: 30px;
 }
 
-.form-footer {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    margin: 5% 0;
-    text-align: center;
-    width: 420px;
+.next {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
 }
 
 .buttonStyleforCreate
@@ -44,13 +40,7 @@
   font-size: medium;
   background-color: transparent;
 }
-.buttonStyleforNext
-{
-  border: 0px;
-  color: white;
-  background-color: #3f51b5;
-  height: 40px;width: 60px;
-}
+
 .buttonStyleForForgot
 {
   border: 0px;
@@ -60,4 +50,9 @@
   padding-left: 40px;
   font-size: large;
   
+}
+.next1
+{
+  justify-content: right;
+  margin-right: 100px;
 }
