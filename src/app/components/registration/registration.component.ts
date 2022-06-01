@@ -11,9 +11,10 @@ export class RegistrationComponent implements OnInit {
 
   registerForm!: FormGroup;
   submitted = false;
-  hide:boolean=true;
+  hide: boolean = true;
 
-  constructor(private formBuilder: FormBuilder,private user:UserService) { }
+
+  constructor(private formBuilder: FormBuilder, private user: UserService) { }
 
   ngOnInit(): void {
     this.registerForm = this.formBuilder.group({
@@ -26,24 +27,27 @@ export class RegistrationComponent implements OnInit {
     });
 
   }
+  get f() { return this.registerForm.controls; }
   OnSubmit() {
     this.submitted = true;
 
     // stop here if form is invalid
     if (this.registerForm.valid) {
-     
-      let reqData = {
-        firstName:this.registerForm.value.firstName,
-        lastName:this.registerForm.value.lastName,
-        email: this.registerForm.value.email,       
-        password: this.registerForm.value.password,
-        address:""
-      }
-      this.user.registration(reqData).subscribe((response:any)=>{
-        console.log(response);
-      }) 
 
-    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value))
-}
+      let reqData = {
+        firstName: this.registerForm.value.firstName,
+        lastName: this.registerForm.value.lastName,
+        email: this.registerForm.value.email,
+        password: this.registerForm.value.password,
+        address: "nagpur"
+      }
+      this.user.registration(reqData).subscribe((response: any) => {
+        console.log(response);
+      })
+      //  alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value))
+    }
+  }
+  showpassword() {
+    this.hide = !this.hide;
   }
 }

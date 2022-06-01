@@ -1,0 +1,21 @@
+<div class="container" fxLayout="column" fxLayoutAlign="space-between center">
+    <div class="note" style="border: 2px solid rgb(227, 222, 222); width:40%">
+        <form [formGroup]="createnoteform" (ngSubmit)="OnSubmit()">
+            <div *ngIf="isShow" fxLayout="row">
+                <input formControlName="title" style="width:99%;" placeholder="title">
+                <div class icon>
+                    <img src="../../../assets/note/pin note.svg" alt="pin">
+                </div>
+            </div>
+            <div *ngIf="!isShow || isShow" (click)="noteshow()">
+                <input formControlName="description" style="width: 99%;" placeholder="description">
+            </div>
+
+            <div class="flex" *ngIf="isShow" fxLayout="row" fxLayoutAlign="space-between centre">
+                <app-icons></app-icons>
+                <button mat-button>Close</button>
+            </div>
+        </form>
+    </div>
+
+</div>

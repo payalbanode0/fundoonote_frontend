@@ -1,8 +1,9 @@
 .register {
-  border: 1px solid #d5d1d1;
+  border: 1px solid grey;
   padding: 50px;
   margin: 50px;
   border-radius: 10px;
+  
 }
 
 
@@ -30,4 +31,23 @@
   display: flex;
   justify-content: space-between;
   text-align: center;
+}
+
+@media only screen and (max-width: 992px) {
+  .register {
+      padding: 30px;
+      margin: 30px;
+  }
+  .register .name .mat-form-field {margin-bottom: 0 !important;}
+
+}
+@media only screen and (max-width: 600px) {
+
+
+  .register {
+      border: none;
+      padding: 28px;
+      margin: 0px;
+      border-radius: 0px;
+  }
 }

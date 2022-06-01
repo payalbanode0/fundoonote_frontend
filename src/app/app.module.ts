@@ -15,6 +15,19 @@ import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassw
 import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { HttpClientModule } from '@angular/common/http';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatIconModule} from '@angular/material/icon';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatListModule} from '@angular/material/list';
+import { CreateNoteComponent } from './components/create-note/create-note.component';
+import { GetallnoteComponent } from './components/getallnote/getallnote.component';
+import { DisplaynoteComponent } from './components/displaynote/displaynote.component';
+import { IconsComponent } from './components/icons/icons.component';
+import { GetallarchieveComponent } from './components/getallarchieve/getallarchieve.component';
+import { GetalltrashnoteComponent } from './components/getalltrashnote/getalltrashnote.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,12 +35,17 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     ForgotpasswordComponent,
     ResetpasswordComponent,
+    DashboardComponent,
+    CreateNoteComponent,
+    GetallnoteComponent,
+    DisplaynoteComponent,
+    IconsComponent,
+    GetallarchieveComponent,
+    GetalltrashnoteComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatFormFieldModule,
+    BrowserModule,AppRoutingModule,
+    BrowserAnimationsModule,MatFormFieldModule,
     MatInputModule,
     FormsModule,
     ReactiveFormsModule,
@@ -35,7 +53,11 @@ import { HttpClientModule } from '@angular/common/http';
     MatInputModule,
     MatButtonModule,
     MatCheckboxModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatListModule,
 
   ],
   providers: [],

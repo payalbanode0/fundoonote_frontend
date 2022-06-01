@@ -1,58 +1,48 @@
-.borderStylelogin
-{
-  border: 1px solid lightgrey;
-  width: 500px;  
-  margin-left: 80px;
-  margin-top: 50px; 
-  padding-top: 30px;
-    padding-bottom: 20px;
-    padding-left: 20px; 
-    justify-content: center;
-    display: flex;
-    flex-flow: column wrap;
-    border-radius: 3%;
-    box-shadow: 0px 3px 6px #00000029;
-}
-.designEmail
-{
-  width: 80%;
-  padding-right: 40px;
-  padding-left: 30px;
-  margin-top: 30px;
-}
-.Spaces .mat-form-field + .mat-form-field{
-  margin-left: 10px;
-  width: 100%;
-  margin-top: 30px;
-}
 
+
+.borderStylelogin {
+  border: 1px solid grey;
+  padding: 50px;
+  margin: 50px;
+  border-radius: 10px;
+  border-radius: 10px;
+}
 .next {
   display: flex;
   justify-content: space-between;
   text-align: center;
 }
 
-.buttonStyleforCreate
-{
+.buttonStyleforCreate {
   padding-left: 40px;
-  border: 0px;
+  border: 1px;
   color: #3f51b5;
   font-size: medium;
   background-color: transparent;
 }
 
-.buttonStyleForForgot
-{
-  border: 0px;
-  color:#3f51b5 ;
+.buttonStyleForForgot {
+  border: 1px;
+  color: #3f51b5;
   font-size: smaller;
   background-color: transparent;
   padding-left: 40px;
   font-size: large;
-  
+
 }
-.next1
-{
-  justify-content: right;
-  margin-right: 100px;
+
+@media only screen and (max-width: 992px) {
+  .borderStylelogin {
+      padding: 30px;
+      margin: 30px;
+  }
+  .borderStylelogin .name .mat-form-field {margin-bottom: 0 !important;}
+}
+@media only screen and (max-width: 600px) {
+  .borderStylelogin {
+      border: none;
+      padding: 28px;
+      margin: 0px;
+      border-radius: 0px;
+  }
 }
