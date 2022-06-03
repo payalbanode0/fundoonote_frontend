@@ -1,0 +1,14 @@
+.displaynotes{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+.note{
+    height: 100px;
+    width: 200px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+    

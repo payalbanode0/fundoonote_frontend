@@ -16,6 +16,14 @@ export class HttpService {
   putServices(url: string, reqdata: any, token: Boolean = true, httpOptions: any = {}) {
     return this.httpClient.put(this.baseurl + url,reqdata, token && httpOptions)
   }
-  
+  getServices(url: string,  token: Boolean = true, httpOptions: any = {}) {
+    return this.httpClient.get(this.baseurl + url, token && httpOptions)
+  }
+  deleteServices(url: string,  token: Boolean = true, httpOptions: any = {}) {
+    return this.httpClient.delete(this.baseurl + url, token && httpOptions)
+  }
+  archieveServices(url: string,  token: Boolean = true, httpOptions: any = {}) {
+    return this.httpClient.put(this.baseurl + url, token && httpOptions)
+  }
 }
 

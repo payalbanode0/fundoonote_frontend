@@ -24,9 +24,15 @@ import { CreateNoteComponent } from './components/create-note/create-note.compon
 import { GetallnoteComponent } from './components/getallnote/getallnote.component';
 import { DisplaynoteComponent } from './components/displaynote/displaynote.component';
 import { IconsComponent } from './components/icons/icons.component';
-import { GetallarchieveComponent } from './components/getallarchieve/getallarchieve.component';
-import { GetalltrashnoteComponent } from './components/getalltrashnote/getalltrashnote.component';
 
+import { AuthguardserviceService } from './services/guardservice/authguardservice.service';
+import {MatCardModule} from '@angular/material/card';
+import { UpdateComponent } from './components/update/update.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { TrashComponent } from './components/trash/trash.component';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { ArchieveComponent } from './components/archieve/archieve.component';
 
 @NgModule({
   declarations: [
@@ -40,17 +46,19 @@ import { GetalltrashnoteComponent } from './components/getalltrashnote/getalltra
     GetallnoteComponent,
     DisplaynoteComponent,
     IconsComponent,
-    GetallarchieveComponent,
-    GetalltrashnoteComponent
+    
+    UpdateComponent,
+    TrashComponent,
+    ArchieveComponent
   ],
   imports: [
     BrowserModule,AppRoutingModule,
     BrowserAnimationsModule,MatFormFieldModule,
-    MatInputModule,
-    FormsModule,
+    MatInputModule,MatDialogModule,
+    FormsModule,MatMenuModule,
     ReactiveFormsModule,
     FlexLayoutModule,
-    MatInputModule,
+    MatInputModule,MatSnackBarModule,
     MatButtonModule,
     MatCheckboxModule,
     HttpClientModule,
@@ -58,9 +66,16 @@ import { GetalltrashnoteComponent } from './components/getalltrashnote/getalltra
     MatIconModule,
     MatToolbarModule,
     MatListModule,
+    MatCardModule,
+    
 
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+//entryComponents:[UpdateComponent],
+  //AuthguardserviceService,
 })
+    
+  
+  
 export class AppModule { }

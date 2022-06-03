@@ -7,6 +7,7 @@
     left: 0;
     right: 0;
     
+    
   }
   .example-toolbar
   {
@@ -14,6 +15,11 @@
   }
   .example-sidenav-container {
     flex: 1;
+    
+    
+  }
+  .icon{
+    opacity: 0.7;
   }
   
   
@@ -34,13 +40,13 @@
   flex-direction: row;
   justify-items: center;
   padding-top: 5px;
-  background: rgb(206, 201, 201);
+  background: rgb(240, 238, 238);
   border: 1px solid transparent;
   width: 8000px;
   border-radius:8px;
   height: 40px;
   margin-left: 90px;
-  opacity:0.8;
+  opacity:0.9;
   padding-right: 10px;
 }
 .refresh{

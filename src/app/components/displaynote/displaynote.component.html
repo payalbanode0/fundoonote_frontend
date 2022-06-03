@@ -1,0 +1,16 @@
+<div class="displaynotes">
+<mat-card class="note" *ngFor='let note of notesArray' style="width:240px;max-height:500px;min-height:150px;Background:pink;">
+    <div>
+        <div (click)="openDialog(note)">
+            {{note.title}}
+        </div>
+        <div (click)="openDialog(note)">
+            {{note.description}}
+        </div>
+
+    </div>
+    <div>
+        <app-icons class ="icons" [notedata]="note"></app-icons>
+    </div>
+</mat-card>
+</div>

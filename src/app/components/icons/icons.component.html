@@ -1,14 +1,27 @@
-<div class="icons">
+<div class="iconsbutton" class="flex" fxLayout="row">
 
-                <button mat-icon-button matTooltip="Remind me"> <img src="../../../assets/note/Remind me.svg"></button>
-                <button mat-icon-button matTooltip="Collaborator"> <img src="../../../assets/note/collaborator.svg"></button>
-          
-                <button mat-icon-button matTooltip="Background color"> <img src="../../../assets/note/colorpalette.svg"></button>
-               
-          
-                <button mat-icon-button matTooltip="add image"><img src="../../../assets/note/add image.svg"></button>
-          
-                <button mat-icon-button matTooltip="Archive"><img src="../../../assets/note/archive.svg"></button>
-          
-                <button  mat-icon-button matTooltip="More"><img src="../../../assets/note/more.svg"></button>
-</div>
+    <button mat-icon-button matTooltip="Remind me"> <img src="../../../assets/note/Remind me.svg"></button>
+    <button mat-icon-button matTooltip="Collaborator"> <img src="../../../assets/note/collaborator.svg"></button>
+
+    <button mat-icon-button matTooltip="Background color"> <img src="../../../assets/note/colorpalette.svg"></button>
+
+
+    <button mat-icon-button matTooltip="add image"><img src="../../../assets/note/add image.svg"></button>
+
+    <button mat-icon-button matTooltip="Archive"><img src="../../../assets/note/archive.svg"></button>
+
+    <div>
+        <button mat-icon-button matTooltip="more" mat-button [matMenuTriggerFor]="menu" #menuTrigger><img src="../../../assets/note/more.svg"></button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)  ="trash(notedata)">delete note</button>
+            <button mat-menu-item>Delete note</button>
+            
+            <button mat-menu-item>Add label</button>
+            <button mat-menu-item>add drawing</button>
+            <button mat-menu-item>Show checkboxes</button>
+           
+        </mat-menu>
+       
+    </div>
+    
+    </div>
