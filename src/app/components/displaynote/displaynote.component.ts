@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component,EventEmitter,Output, Input, OnInit } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { UpdateComponent } from '../update/update.component';
 
@@ -9,7 +9,8 @@ import { UpdateComponent } from '../update/update.component';
 })
 export class DisplaynoteComponent implements OnInit {
   @Input() notesArray:any;
-  note:any
+  note:any;
+  @Output() refreshEvent= new EventEmitter<any>();
   constructor(public dialog: MatDialog) {}
 
   ngOnInit(): void {
@@ -25,6 +26,10 @@ openDialog(note:any) :void{
     console.log(`Dialog result was closed`);
     
   });
+}
+receivedMessage(event:any){
+  console.log(event);
+  this.refreshEvent.emit("card")
 }
 }
 

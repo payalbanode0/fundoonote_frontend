@@ -18,7 +18,7 @@ noteList:any
       console.log(response.data);
       this.noteList = response.data;
        this.noteList = this.noteList.filter((object:any)=>{
-         return object.isArchive === true
+         return object.isArchieve === true 
        })
     })
   

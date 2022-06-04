@@ -8,13 +8,13 @@
 
     <button mat-icon-button matTooltip="add image"><img src="../../../assets/note/add image.svg"></button>
 
-    <button mat-icon-button matTooltip="Archive"><img src="../../../assets/note/archive.svg"></button>
-
+    <div (click) ="archieve()">
+        <img class="icon" src="../../../assets/note/archive.svg" alt="archieve">
+    </div>
     <div>
         <button mat-icon-button matTooltip="more" mat-button [matMenuTriggerFor]="menu" #menuTrigger><img src="../../../assets/note/more.svg"></button>
         <mat-menu #menu="matMenu">
             <button mat-menu-item (click)  ="trash(notedata)">delete note</button>
-            <button mat-menu-item>Delete note</button>
             
             <button mat-menu-item>Add label</button>
             <button mat-menu-item>add drawing</button>

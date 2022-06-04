@@ -1,1 +1,1 @@
-<app-displaynote [notesArray]="noteList" ></app-displaynote>
+<app-displaynote [notesArray]="noteList" (refreshEvent)="receiveMessage($event)"></app-displaynote>

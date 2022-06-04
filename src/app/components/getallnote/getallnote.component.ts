@@ -19,7 +19,7 @@ export class GetallnoteComponent implements OnInit {
     console.log(response);
     this.noteList=response.data;
     this.noteList=this.noteList.filter((object:any)=>{
-      return object.isTrash===false
+      return object.isTrash===false && object.isArchieve===false
     })
   })
   console.log("call api here");

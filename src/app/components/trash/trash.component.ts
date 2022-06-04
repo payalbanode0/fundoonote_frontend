@@ -20,13 +20,16 @@ export class TrashComponent implements OnInit {
       console.log(response);
       this.noteList = response.data;
       this.noteList = this.noteList.filter((object: any) => {
-        return object.isTrash === true
+        return object.isTrash === true 
       })
 
     })
 
     console.log("call api");
 
+  }
+  receiveMessage(event: any) {
+    this.getNote();
   }
 }
 

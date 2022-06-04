@@ -10,7 +10,7 @@
 
     </div>
     <div>
-        <app-icons class ="icons" [notedata]="note"></app-icons>
+        <app-icons class ="icons" [notedata]="note" (refresh)="receivedMessage($event)"></app-icons>
     </div>
 </mat-card>
 </div>
