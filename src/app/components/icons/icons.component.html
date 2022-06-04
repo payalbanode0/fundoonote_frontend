@@ -3,8 +3,18 @@
     <button mat-icon-button matTooltip="Remind me"> <img src="../../../assets/note/Remind me.svg"></button>
     <button mat-icon-button matTooltip="Collaborator"> <img src="../../../assets/note/collaborator.svg"></button>
     
-    <button mat-icon-button matTooltip=" color"> <img src="../../../assets/note/colorpalette.svg"></button>
-
+    <div matTooltip="Background color" [matMenuTriggerFor]="color">
+        <img class="icon" src="../../../assets/note/background option.svg">
+        <mat-menu #color="matMenu">
+                <div fxLayout="row wrap" style="padding-left: 8px;">
+                        <div *ngFor="let color of colorsArr" class="colorBox">
+                                <button class="colors" mat-icon-button mat-raised-button
+                                        [style.background]="color?.Colorcode"
+                                        (click)="changeColor(color?.Colorcode)"></button>
+                        </div>
+                </div>
+        </mat-menu>
+</div>
 
     <button mat-icon-button matTooltip="add image"><img src="../../../assets/note/add image.svg"></button>
 

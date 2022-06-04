@@ -1,5 +1,5 @@
 <div class="displaynotes">
-<mat-card class="note" *ngFor='let note of notesArray' style="width:240px;max-height:500px;min-height:150px;Background:pink;">
+<mat-card class="note" *ngFor='let note of notesArray' style="width:240px;max-height:500px;min-height:150px;"[style.background]="note.colour">
     <div>
         <div (click)="openDialog(note)">
             {{note.title}}

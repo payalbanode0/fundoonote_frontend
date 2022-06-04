@@ -19,16 +19,14 @@ export class IconsComponent implements OnInit {
   noteId: any;
   @Input() notedata: any;
   @Output() refresh = new EventEmitter<string>();
-  @Output() UpdateNoteEvent = new EventEmitter<any>();
+  //@Output() UpdateNoteEvent = new EventEmitter<any>();
  // @Output() DisplayNoteEvent = new EventEmitter<any>();
   
   
   trashcomponent = false;
   displaynotecomponent = false;
   archieveComponent =false;
-  colorArray = [{Colorcode:"white", name:"White"},{Colorcode:"rgb(238, 188, 188)", name:"Red"},{Colorcode:"#fbbc04", name:"Orange"},{Colorcode:"#fff475", name:"Yellow"},{Colorcode:"rgb(175, 215, 175)", name:"Green"},{Colorcode:"aqua", name:"aqua"},
-  {Colorcode:"#cbf0f8", name:"Blue"},{Colorcode:"teal", name:"teal"},{Colorcode:"#d7aefb", name:"Purple"},{Colorcode:"#fdcfe8", name:"Pink"},{Colorcode:"#e6c9a8", name:"Brown"},{Colorcode:"#e8eaed", name:"Gray"}];
-
+  colorsArr = [{Colorcode:"pink"},{Colorcode:"yellow"},{Colorcode:"orange"},{Colorcode:"rgb(255,99,71)"},{Colorcode:"rgb(152,251,152)"},{Colorcode:"Teal"},{Colorcode:"rgb(106,90,205)"},{Colorcode:"rgb(240,230,140)"},{Colorcode:"rgb(238,130,238)"},{Colorcode:"rgb(255,160,122)"}];
 
   constructor(private router: ActivatedRoute, private note: NoteserviceService, public dialog: MatDialog, private snackbar: MatSnackBar, ) { }
 
@@ -71,23 +69,18 @@ export class IconsComponent implements OnInit {
       })
     })
   }
-  changeColor(color:any){
-    console.log(color);
+  changeColor(colour:any){
+    console.log(colour);
 
-    this.note.changeColour(this.notedata.noteId,color).subscribe((response: any) => {
+    this.note.colourpallete(this.notedata.noteId,colour).subscribe((response: any) => {
       console.log(response);
       
-      this.UpdateNoteEvent.emit(response)
+      this.refresh.emit("hello")
       this.snackbar.open('Note Background Color Changed Successfully!!!', '', {
           duration: 3000,
-          verticalPosition: 'bottom'
+          
         })
-     }, error=>this.snackbar.open('Note Background Color is not changed', '', {
-      duration: 2000,
-      verticalPosition: 'bottom'
-    })
-    )
-  }
+     })
 }
 
-
+}

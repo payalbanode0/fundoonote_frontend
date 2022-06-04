@@ -76,8 +76,8 @@ export class NoteserviceService {
       return this.httpservices.putServices(`Note/ArchieveNote/${noteId}`, {}, true, header)
     }
   }
-  changeColour(noteId: any, color:any){
-    console.log("token",this.token,noteId);
+  colourpallete(noteId: any, colour:any){
+    console.log("token",this.token);
   
    let header ={
      headers: new HttpHeaders({
@@ -85,7 +85,7 @@ export class NoteserviceService {
       'Authorization': 'Bearer ' + this.token
      })
    }
-   return this.httpservices.putServices( `Note/ChangeColorNote/${noteId}?color=${color}`,{},true,header)
+   return this.httpservices.putServices( `Note/ChangeColour/${noteId}/${colour}`,{},true,header)
   }
 }
 
