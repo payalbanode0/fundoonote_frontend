@@ -7,11 +7,7 @@ import { AuthguardserviceService } from './services/guardservice/authguardservic
   providedIn: 'root'
 })
 export class AuthguardnameGuard implements CanActivate {
-  // canActivate(
-  //   route: ActivatedRouteSnapshot,
-  //   state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-  //   return true;
-  // }
+  
   constructor(private Authguardservice: AuthguardserviceService, private router: Router) {}  
 canActivate(): boolean {  
     if (!this.Authguardservice.gettoken()) {  

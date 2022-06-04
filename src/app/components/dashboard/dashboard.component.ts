@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { MediaMatcher } from '@angular/cdk/layout';
-import { ChangeDetectorRef,  OnDestroy } from '@angular/core';
+import { ChangeDetectorRef, OnDestroy } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -13,10 +14,10 @@ export class DashboardComponent implements OnDestroy {
 
   mobileQuery: MediaQueryList;
 
-  fillerNav = Array.from({length: 50}, (_, i) => `Nav Item ${i + 1}`);
+  fillerNav = Array.from({ length: 50 }, (_, i) => `Nav Item ${i + 1}`);
 
   fillerContent = Array.from(
-    {length: 50},
+    { length: 50 },
     () =>
       `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
@@ -27,7 +28,7 @@ export class DashboardComponent implements OnDestroy {
 
   private _mobileQueryListener: () => void;
 
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
+  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private router: Router, private snackbar: MatSnackBar) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
@@ -38,4 +39,12 @@ export class DashboardComponent implements OnDestroy {
   }
 
   shouldRun = /(^|.)(stackblitz|webcontainer).(io|com)$/.test(window.location.host);
+  logout() {
+    localStorage.removeItem('token');
+    this.router.navigateByUrl("/login")
+    console.log("logout sucessfully");
+    this.snackbar.open('Logout Successfully..!!!', '..', {
+      duration: 3000,
+    })
+  }
 }

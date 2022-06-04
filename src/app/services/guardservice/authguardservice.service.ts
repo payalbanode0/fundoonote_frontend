@@ -10,7 +10,7 @@ export class AuthguardserviceService {
   }
 
   gettoken(){  
-    return !!localStorage.getItem("SeesionUser");  
+    return !!localStorage.getItem("token");  
     }  
  
 

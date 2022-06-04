@@ -8,14 +8,16 @@ import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
 import { TrashComponent } from './components/trash/trash.component';
+import { AuthguardnameGuard } from './authguardname.guard';
 
 const routes: Routes = [
-//  {path:'',redirectTo:"/login" ,pathMatch:'full'},
+ 
 {path:'login',component:LoginComponent},
 {path:'registration',component:RegistrationComponent},
 {path: 'forgotpassword', component:ForgotpasswordComponent},
 {path:'reset-password/:token',component:ResetpasswordComponent},
-{path:'dashboard',component:DashboardComponent,
+{path:'',redirectTo:"/login" ,pathMatch:'full'},
+{path:'dashboard',component:DashboardComponent,canActivate:[AuthguardnameGuard],
 children:[
   {path: 'notes',component:GetallnoteComponent},
   {path: 'trash',component:TrashComponent},
