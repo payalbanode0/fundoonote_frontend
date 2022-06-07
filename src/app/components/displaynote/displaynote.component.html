@@ -1,18 +1,19 @@
 <div class="displaynotes">
-<mat-card class="note" *ngFor='let note of notesArray' style="width:240px;max-height:500px;min-height:150px;"[style.background]="note.colour">
-    <div>
-        <div (click)="openDialog(note)">
-            {{note.title}}
-        </div>
-        <div (click)="openDialog(note)">
-            {{note.description}}
-        </div>
+    <mat-card class="note" *ngFor='let note of notesArray | filter:Msg' style="width:240px;max-height:500px;min-height:150px;"
+        [style.background]="note.colour">
+        <div>
+            <div (click)="openDialog(note)">
+                {{note.title}}
+            </div>
+            <div (click)="openDialog(note)">
+                {{note.description}}
+            </div>
 
-    <div>
-        <app-icons class ="icons" [notedata]="note" (refresh)="receivedMessage($event)"></app-icons>
+            <div>
+                <app-icons class="icon" [notedata]="note" (refresh)="receivedMessage($event)"></app-icons>
 
-    </div>
-   
-    </div>
-</mat-card>
+            </div>
+
+        </div>
+    </mat-card>
 </div>

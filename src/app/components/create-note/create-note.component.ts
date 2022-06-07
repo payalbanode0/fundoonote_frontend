@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,Output,EventEmitter, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { NoteserviceService } from 'src/app/services/noteservice.service';
@@ -12,6 +12,8 @@ export class CreateNoteComponent implements OnInit {
   createnoteform!: FormGroup;
   isShow = false;
   submitted = false;
+
+  @Output() messageEvent = new EventEmitter<string>();
   constructor(private forrmBuilder: FormBuilder, private note: NoteserviceService) { }
 
   ngOnInit(): void {
@@ -24,10 +26,9 @@ export class CreateNoteComponent implements OnInit {
     this.isShow = true;
   }
 
-  noteclose() {
-    this.isShow = false;
-  }
+
   OnSubmit() {
+    this.isShow = false;
     this.submitted = true;
     console.log("api call")
 
@@ -41,6 +42,7 @@ export class CreateNoteComponent implements OnInit {
       this.note.createNote(reqData).subscribe((response: any) => {
         console.log(response);
         localStorage.setItem("token", response.data)
+        this.messageEvent.emit("hello")
       })
     }
 

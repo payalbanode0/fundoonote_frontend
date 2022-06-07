@@ -1,22 +1,30 @@
 <div class="container" fxLayout="column" fxLayoutAlign="space-between center">
     <div class="note" style="border: 2px solid rgb(199, 192, 192); width:40%;  ">
         <form [formGroup]="createnoteform" (ngSubmit)="OnSubmit()">
-            <div *ngIf="isShow" fxLayout="row">
+            <div *ngIf="isShow" fxLayout="row" style="padding-top:10px">
                 <input formControlName="title" style="width:99%;" placeholder="Title">
                 <div class icon>
                     <img src="../../../assets/note/pin note.svg" alt="pin">
                 </div>
             </div>
-            <div *ngIf="!isShow || isShow" (click)="noteshow()">
+            <div *ngIf="!isShow || isShow" (click)="noteshow()" fxLayout="row"  style="margin-top:20px">
                 <input formControlName="description" style="width: 70%;" placeholder="Take A Note">
+                <div *ngIf="!isShow" class="icons" fxLayoutAlign="space-between center">
+                    <button mat-icon-button matTooltip="New list"> <img
+                            src="../../../assets/note/check_box.svg"></button>
+                    <button mat-icon-button matTooltip=" New note with drawing"> <img
+                            src="../../../assets/note/brush.svg"></button>
+                    <button mat-icon-button matTooltip=" New note with image"> <img
+                            src="../../../assets/note/add image.svg"></button>
+                </div>
             </div>
 
-            <div class="flex" *ngIf="isShow" fxLayout="row" fxLayoutAlign="space-between centre">
+            <div class="flex" *ngIf="isShow" fxLayout="row" fxLayoutAlign="space-between end">
                 <app-icons></app-icons>
-               <div fxLayoutAlign="end end">
-                   <button mat-button>Close</button></div>
+
+                <button mat-button >Close</button>
+
             </div>
         </form>
     </div>
-
 </div>

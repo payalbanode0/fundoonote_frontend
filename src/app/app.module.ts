@@ -34,6 +34,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ArchieveComponent } from './components/archieve/archieve.component';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 
     UpdateComponent,
     TrashComponent,
-    ArchieveComponent
+    ArchieveComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule, AppRoutingModule,

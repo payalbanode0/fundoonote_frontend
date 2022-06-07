@@ -10,8 +10,9 @@
 
         <div class="searchbox">
 
-            <img src="../../../assets/dashboardicon/search.jpg" style="width: 20px; height: 30px;padding-right: 25px;padding-bottom: 20px;">
-            <input class="inputSearchbox" type="text" placeholder="Search">
+            <img src="../../../assets/dashboardicon/search.jpg"
+                style="width: 20px; height: 30px;padding-right: 25px;padding-bottom: 20px;">
+            <input class="inputSearchbox" type="text" placeholder="Search" (keyup)="keyFunction($event)">
         </div>
         <img class="refresh" src="../../../assets/dashboardicon/refresh.svg">
         <div>
@@ -24,8 +25,9 @@
         <div>
             <button class="apps" (click)="logout()"><img src="../../../assets/dashboardicon/app.svg"></button>
         </div>
-        <div><button class="button" (click)="logout()"><img style="padding-top:12px margin-left=50px;block-size:25px;margin-top: 12px;"
-                src="../../../assets/dashboardicon/person.svg"></button>
+        <div><button class="button" (click)="logout()"><img
+                    style="padding-top:12px margin-left=50px;block-size:25px;margin-top: 12px;"
+                    src="../../../assets/dashboardicon/person.svg"></button>
         </div>
     </mat-toolbar>
 
@@ -37,16 +39,16 @@
                         src="../../../assets/dashboardicon/lightbulb.svg"> Notes</a>
                 <a mat-list-item routerLink="."><img class="icon" style="padding-right: 25px;"
                         src="../../../assets/dashboardicon/reminder.svg">Reminders</a>
-                <a mat-list-item routerLink="."><img class="icon" style="padding-right: 25px;" 
-                    src="../../../assets/dashboardicon/edit.svg">Edit
+                <a mat-list-item routerLink="."><img class="icon" style="padding-right: 25px;"
+                        src="../../../assets/dashboardicon/edit.svg">Edit
                     labels</a>
-                <a mat-list-item routerLink="/dashboard/archieve"><img class="icon"style="padding-right: 25px;"
+                <a mat-list-item routerLink="/dashboard/archieve"><img class="icon" style="padding-right: 25px;"
                         src="../../../assets/dashboardicon/archive.svg">Archeive</a>
                 <a mat-list-item routerLink="/dashboard/trash"><img class="icon" style="padding-right: 25px;"
                         src="../../../assets/dashboardicon/trash.svg">Trash</a>
             </mat-nav-list>
         </mat-sidenav>
         <router-outlet></router-outlet>
-        
+
     </mat-sidenav-container>
 </div>

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { outputAst } from '@angular/compiler';
+import { Component, Output, EventEmitter,OnInit } from '@angular/core';
 import { NoteserviceService } from 'src/app/services/noteservice.service';
 
 @Component({
@@ -8,8 +9,10 @@ import { NoteserviceService } from 'src/app/services/noteservice.service';
 })
 export class TrashComponent implements OnInit {
 
-  noteList: any;
-
+  noteList: any
+  
+  
+  @Output() trashEvent = new EventEmitter<string>();
   constructor(private note: NoteserviceService) { }
 
   ngOnInit(): void {
@@ -19,8 +22,9 @@ export class TrashComponent implements OnInit {
     this.note.getallnote().subscribe((response: any) => {
       console.log(response);
       this.noteList = response.data;
-      this.noteList = this.noteList.filter((object: any) => {
-        return object.isTrash === true 
+      this.noteList.reverse();
+      this.noteList = this.noteList.filter((obj: any) => {
+        return obj.isTrash === true
       })
 
     })

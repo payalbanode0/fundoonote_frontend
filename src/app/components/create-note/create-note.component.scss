@@ -6,10 +6,9 @@
 
 .note {
     padding: 10px;
-    border-radius: 12px;
+    border-radius: 8px;
+    box-shadow: 0px 3px 6px #00000029;
     border: 1px solid lightgray;
-     
-
 
 }
 
@@ -18,34 +17,24 @@
     font-weight: 100px;
     font-size: 14px;
     font-family: sans-serif;
-    background-color: rgb(255, 255, 255);
-    opacity: 0.7;
+    background-color: #FAFAFA;
 }
-.flex{
-    padding-bottom: 25px;
-}
-
-
-
-
 
 .takenote {
-    height: 30px;
+    height: 25px;
     font-size: 14px;
     font-family: sans-serif;
     word-wrap: break-word;
     width: 150px;
-    background-color: rgb(255, 255, 255);
-    opacity: 0.7;
+    background-color: #FAFAFA;
     
 }
 
-.close {
+.close{
     margin-left: 100px;
-    border: 0;
-    outline: 0;
-
-}
+       border: 0;
+       outline: 0;
+    }
 
 input {
     border: 0;
@@ -66,20 +55,21 @@ button:focus {
     outline: none !important;
 }
 
-::placeholder {
-    opacity: 10;
-    color: black
-}
-
 .border {
     margin: auto;
-
 }
 
-.righticonnotes {
+.icons {
+    padding-left: 30px;
+    opacity:0.6;
+    padding-bottom: 30px;
+    
+}
+.icons button {
     border: none;
     background-color: white;
-    width: 52px;
-    height: 25px;
-    padding-bottom: 30px;
+    width:50px;
+    height:25px;
+    padding-bottom: 10px;
+    padding-left: 30px;
 }

@@ -11,20 +11,21 @@ import { TrashComponent } from './components/trash/trash.component';
 import { AuthguardnameGuard } from './authguardname.guard';
 
 const routes: Routes = [
- 
-{path:'login',component:LoginComponent},
-{path:'registration',component:RegistrationComponent},
-{path: 'forgotpassword', component:ForgotpasswordComponent},
-{path:'reset-password/:token',component:ResetpasswordComponent},
-{path:'',redirectTo:"/login" ,pathMatch:'full'},
-{path:'dashboard',component:DashboardComponent,canActivate:[AuthguardnameGuard],
-children:[
-  {path: 'notes',component:GetallnoteComponent},
-  {path: 'trash',component:TrashComponent},
-  {path: 'archieve',component:ArchieveComponent}, 
 
-]
-}
+  { path: 'login', component: LoginComponent },
+  { path: 'registration', component: RegistrationComponent },
+  { path: 'forgotpassword', component: ForgotpasswordComponent },
+  { path: 'reset-password/:token', component: ResetpasswordComponent },
+  { path: '', redirectTo: "/login", pathMatch: 'full' },
+  {
+    path: 'dashboard', component: DashboardComponent, canActivate: [AuthguardnameGuard],
+    children: [
+      { path: 'notes', component: GetallnoteComponent },
+      { path: 'trash', component: TrashComponent },
+      { path: 'archieve', component: ArchieveComponent },
+
+    ]
+  }
 ];
 
 @NgModule({

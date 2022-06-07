@@ -43,28 +43,35 @@ export class NoteserviceService {
     }
     return this.httpservices.putServices(`Note/Update/${noteId}`, reqdata, true, headerOption);
   }
+
+
   deleteNote(noteId: any) {
-    console.log("token", this.token);
+    console.log("token", this.token)
+
     let headerOption = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
         'Authorization': 'Bearer ' + this.token
       })
     }
-    return this.httpservices.deleteServices(`Note/Delete/${noteId}`, true, headerOption);
+    return this.httpservices.deleteServices(`Note/Delete/${noteId}`, true, headerOption)
   }
+
   trashNote(noteId: any) {
-    console.log("token", this.token);
+
+    console.log("token", this.token)
+
     let headerOption = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
         'Authorization': 'Bearer ' + this.token
       })
     }
-    return this.httpservices.putServices(`Note/IsTrash/${noteId}`, {}, true, headerOption);
+    return this.httpservices.putServices(`Note/IsTrash/${noteId}`, {}, true, headerOption)
   }
-  arcieveNote(noteId : any){
-    {
+
+
+  archieveNote(noteId : any){
       console.log("token", this.token);
   
       let header = {
@@ -74,7 +81,6 @@ export class NoteserviceService {
         })
       }
       return this.httpservices.putServices(`Note/ArchieveNote/${noteId}`, {}, true, header)
-    }
   }
   colourpallete(noteId: any, colour:any){
     console.log("token",this.token);

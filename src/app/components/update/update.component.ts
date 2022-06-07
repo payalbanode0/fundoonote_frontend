@@ -23,6 +23,7 @@ export class UpdateComponent implements OnInit {
     this.title = this.data.title
     this.description = this.data.description
     this.colour = this.data.colour
+    this.dialogRef.updateSize('20%', '40%');
   }
 
   onClick(): void{
