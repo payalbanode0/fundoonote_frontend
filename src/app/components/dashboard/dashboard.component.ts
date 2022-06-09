@@ -4,6 +4,9 @@ import { MediaMatcher } from '@angular/cdk/layout';
 import { ChangeDetectorRef, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DataService } from 'src/app/services/Data/data.service';
+import { MatDialog } from '@angular/material/dialog';
+import { EditLableComponent } from '../label/label.component';
+
 
 
 @Component({
@@ -29,7 +32,7 @@ export class DashboardComponent implements OnDestroy {
 
   private _mobileQueryListener: () => void;
 
-  constructor(private data: DataService, changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private router: Router, private snackbar: MatSnackBar) {
+  constructor(private data: DataService, changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private router: Router, private snackbar: MatSnackBar,public dialog: MatDialog,private snav:MatSnackBar) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
@@ -51,5 +54,21 @@ export class DashboardComponent implements OnDestroy {
     this.snackbar.open('Logout Successfully..!!!', '..', {
       duration: 3000,
     })
+  }
+  openDialog(): void {
+    const dialogRef = this.dialog.open(EditLableComponent, {
+      width: "250px",
+      height:"250px",
+      
+      
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.snav.open('edit note Successfully', '', {
+        duration: 3000,
+      })
+      
+    });
   }
 }

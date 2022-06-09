@@ -9,6 +9,7 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
 import { TrashComponent } from './components/trash/trash.component';
 import { AuthguardnameGuard } from './authguardname.guard';
+import { EditLableComponent } from './components/label/label.component';
 
 const routes: Routes = [
 
@@ -23,6 +24,7 @@ const routes: Routes = [
       { path: 'notes', component: GetallnoteComponent },
       { path: 'trash', component: TrashComponent },
       { path: 'archieve', component: ArchieveComponent },
+      {path:'label',component:EditLableComponent},
 
     ]
   }

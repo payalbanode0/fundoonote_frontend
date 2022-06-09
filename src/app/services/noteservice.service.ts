@@ -93,5 +93,18 @@ export class NoteserviceService {
    }
    return this.httpservices.putServices( `Note/ChangeColour/${noteId}/${colour}`,{},true,header)
   }
+  label(noteId: any, labelName:any){
+    console.log("token",this.token);
+  
+   let header ={
+     headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + this.token
+     })
+   }
+   return this.httpservices.postServices( `api/Label/AddLabel/${noteId}/${labelName}`,{},true,header)
+  }
 }
+  
+
 

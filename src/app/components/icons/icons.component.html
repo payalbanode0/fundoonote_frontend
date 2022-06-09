@@ -24,21 +24,14 @@
             <img (click)="unarchieve()" class="icon" style="margin-top:8px;" src="../../../assets/note/unarchive.svg">
         </div>
 
-        <!-- <div *ngIf="isDisplayNoteComponent">
-            <button mat-icon-button matTooltip="Archieve" (click)="archieve()"><img class="icon"
-                    src="../../../assets/note/archive.svg"></button>
-        </div>
-        <div *ngIf="isArchieveComponent">
-            <button mat-icon-button matTooltip="Unarchieve" (click)="unarchieve()"><img class="icon"
-                    src="../../../assets/note/unarchive.svg"></button>
-        </div> -->
+      
         <div>
             <img  mat-button [matMenuTriggerFor]="menu" class="icon"
                     style="margin-top:7px;" src="../../../assets/note/more.svg">
 
             <mat-menu #menu="matMenu">
                 <button mat-menu-item (click)="trash(notedata)">Delete note</button>
-                <button mat-menu-item>Add label</button>
+                <button mat-menu-item>(click)="label()"Add label</button>
                 <button mat-menu-item>add drawing</button>
                 <button mat-menu-item>Show checkboxes</button>
 
