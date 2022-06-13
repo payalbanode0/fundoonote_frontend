@@ -1,4 +1,4 @@
-<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+<div fxflex=100 class="example-container" [class.example-is-mobile]="mobileQuery.matches">
     <mat-toolbar color="white" class="example-toolbar">
         <button style="border: 0px;" mat-icon-button (click)="snav.toggle()">
             <mat-icon>menu</mat-icon>
@@ -26,7 +26,7 @@
             <button class="apps" (click)="logout()"><img src="../../../assets/dashboardicon/app.svg"></button>
         </div>
         <div><button class="button" (click)="logout()"><img
-                    style="padding-top:12px margin-left=50px;block-size:25px;margin-top: 12px;"
+                    style="padding-top:12px margin-left=50px;block-size:25px;margin-top: 12px; border: none;"
                     src="../../../assets/dashboardicon/person.svg"></button>
         </div>
     </mat-toolbar>
@@ -39,9 +39,24 @@
                         src="../../../assets/dashboardicon/lightbulb.svg"> Notes</a>
                 <a mat-list-item routerLink="."><img class="icon" style="padding-right: 25px;"
                         src="../../../assets/dashboardicon/reminder.svg">Reminders</a>
-                <a mat-list-item (click)="openDialog()"><img class="icon" style="padding-right: 25px;"
-                        src="../../../assets/dashboardicon/edit.svg">Edit
+
+                <div fxLayout="row" fxLayoutAlign="start center" style="vertical-align: center;"
+                    *ngFor="let Labels of LabelArray">
+                    <mat-nav-list>
+                        <a mat-list-item>
+                            <img src="./../../../assets/label/newLable.png" alt="img"
+                                style="height: 20px; width: 20px; padding-right: 30px; opacity: 0.7;" class="icon">
+                            {{Labels.labelName}}
+                        </a>
+                    </mat-nav-list>
+                </div>
+                <a mat-list-item (click)="openDialog()"><img class="icon"
+                        style="padding-right: 25px; width: 25px; height: 25px;"
+                        src="../../../assets/label/newLable.png">Edit
                     labels</a>
+
+
+
                 <a mat-list-item routerLink="/dashboard/archieve"><img class="icon" style="padding-right: 25px;"
                         src="../../../assets/dashboardicon/archive.svg">Archeive</a>
                 <a mat-list-item routerLink="/dashboard/trash"><img class="icon" style="padding-right: 25px;"

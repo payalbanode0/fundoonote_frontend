@@ -6,6 +6,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { DataService } from 'src/app/services/Data/data.service';
 import { MatDialog } from '@angular/material/dialog';
 import { EditLableComponent } from '../label/label.component';
+import { LableService } from 'src/app/services/labelservices.service';
 
 
 
@@ -17,6 +18,7 @@ import { EditLableComponent } from '../label/label.component';
 export class DashboardComponent implements OnDestroy {
 
   mobileQuery: MediaQueryList;
+  LabelArray: any;
 
   fillerNav = Array.from({ length: 50 }, (_, i) => `Nav Item ${i + 1}`);
 
@@ -32,17 +34,30 @@ export class DashboardComponent implements OnDestroy {
 
   private _mobileQueryListener: () => void;
 
-  constructor(private data: DataService, changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private router: Router, private snackbar: MatSnackBar,public dialog: MatDialog,private snav:MatSnackBar) {
+  constructor(private data: DataService, public labelservice: LableService, changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private router: Router, private snackbar: MatSnackBar, public dialog: MatDialog, private snav: MatSnackBar) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
+  }
+
+
+  ngOnInit(): void {
+    this.getlabel()
+  }
+
+  getlabel() {
+    this.labelservice.getAllLable().subscribe((result: any) => {
+      console.log(result);
+      this.LabelArray = result.data;
+      console.log(this.LabelArray);
+    })
   }
 
   ngOnDestroy(): void {
     this.mobileQuery.removeListener(this._mobileQueryListener);
   }
 
-  keyFunction(event:any) {
+  keyFunction(event: any) {
     this.data.changeMessage(event.target.value)
   }
 
@@ -58,9 +73,9 @@ export class DashboardComponent implements OnDestroy {
   openDialog(): void {
     const dialogRef = this.dialog.open(EditLableComponent, {
       width: "250px",
-      height:"250px",
-      
-      
+      height: "250px",
+
+
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -68,7 +83,8 @@ export class DashboardComponent implements OnDestroy {
       this.snav.open('edit note Successfully', '', {
         duration: 3000,
       })
-      
+
     });
   }
+
 }

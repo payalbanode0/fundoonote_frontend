@@ -19,7 +19,7 @@ export class IconsComponent implements OnInit {
   noteId: any;
   @Input() notedata: any;
   @Output() refresh = new EventEmitter<string>();
-  
+
   isTrashComponent = false;
   isDisplayNoteComponent = false;
   isArchieveComponent = false;
@@ -53,6 +53,7 @@ export class IconsComponent implements OnInit {
     })
   }
 
+  
   delete() {
     this.note.deleteNote(this.notedata.noteId).subscribe((response: any) => {
       console.log("Note Deleted Successfully", response);
@@ -89,7 +90,7 @@ export class IconsComponent implements OnInit {
 
     this.note.archieveNote(this.notedata.noteId).subscribe((res: any) => {
       console.log(res);
-      this.refresh.emit("Hello")
+      this.refresh.emit("hello")
       this.snackbar.open('Note unArchived', '', {
         duration: 3000,
 
@@ -106,5 +107,6 @@ export class IconsComponent implements OnInit {
     })
   }
 }
+
 
 

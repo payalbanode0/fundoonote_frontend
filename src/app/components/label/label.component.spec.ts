@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LabelComponent } from './label.component';
+import {EditLableComponent } from './label.component';
 
 describe('LabelComponent', () => {
-  let component: LabelComponent;
-  let fixture: ComponentFixture<LabelComponent>;
+  let component: EditLableComponent;
+  let fixture: ComponentFixture<EditLableComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LabelComponent ]
+      declarations: [ EditLableComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LabelComponent);
+    fixture = TestBed.createComponent(EditLableComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

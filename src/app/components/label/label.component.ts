@@ -8,41 +8,70 @@ import { LableService } from 'src/app/services/labelservices.service';
   styleUrls: ['./label.component.scss']
 })
 export class EditLableComponent implements OnInit {
-  @Input()GetLable: any;
-  lableName:any;
-  isLable:boolean =false;
-  isDelete:boolean =false;
-  constructor(private lable:LableService,) { }
+  @Input() GetLable: any;
+  labelName: any
+  LabelArray: any
+  isLable: boolean = false;
+  isDelete: boolean = false;
+  label: any;
+  constructor(private labelservice: LableService,) { }
 
-  hideAndShow(){
+  hideAndShow() {
     console.log("calling hide")
-    this.isLable=!this.isLable
-    
+    this.isLable = !this.isLable
+
   }
-  show(){
-    this.isDelete=!this.isDelete
+  show() {
+    this.isDelete = !this.isDelete
   }
 
 
   ngOnInit(): void {
+    this.getlabel()
   }
+
+  getlabel() {
+    this.labelservice.getAllLable().subscribe((result: any) => {
+      console.log(result);
+      this.LabelArray = result.data;
+      console.log(this.LabelArray);
+    })
+  }
+
 
   onCreate() {
-    
 
-    // stop here if form is invalid
-    
-      let reqdata = {
-        LabelName:this.lableName
-      };
-      console.log(reqdata,"inside label.ts")
-      this.lable.createLabel(reqdata).subscribe((response:any)=>{
-        console.log(response);
-         
-      
-      });
-      
 
-      // alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.noteForm.value));
-    }
+    //stop
+
+    let reqdata = {
+      LabelName: this.labelName
+    };
+    console.log(reqdata, "inside label.ts")
+    this.labelservice.createLabel(reqdata).subscribe((response: any) => {
+      console.log(response);
+
+
+    });
+
+
+    // alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.noteForm.value));
   }
+  delete(Labels: any) {
+
+    let reqdata = {
+      LabelId:Labels,
+
+    }
+    console.log(reqdata)
+
+    this. labelservice.DeleteLabel(reqdata).subscribe((response: any) =>{
+      console.log("lable")
+      console.log(response);
+
+      
+    });
+
+  }
+}
+

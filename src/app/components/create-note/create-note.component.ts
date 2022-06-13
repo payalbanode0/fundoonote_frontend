@@ -37,11 +37,10 @@ export class CreateNoteComponent implements OnInit {
       let reqData = {
         title: this.createnoteform.value.title,
         description: this.createnoteform.value.description,
-        colour:"blue"
+        colour:"white"
       }
       this.note.createNote(reqData).subscribe((response: any) => {
         console.log(response);
-        localStorage.setItem("token", response.data)
         this.messageEvent.emit("hello")
       })
     }

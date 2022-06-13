@@ -35,9 +35,8 @@ export class DisplaynoteComponent implements OnInit {
   }
   receivedMessage(event: any) {
     console.log(event);
-    this.refreshEvent.emit("card")
+    this.refreshEvent.emit("hello")
   }
 }
-
 
 

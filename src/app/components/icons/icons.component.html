@@ -1,10 +1,10 @@
 <div class="iconsbutton" class="flex" fxLayout="row">
     <div *ngIf="!isTrashComponent" fxLayout="row">
-        <img class="icon" src="../../../assets/note/Remind me.svg">
-        <img class="icon" src="../../../assets/note/collaborator.svg">
+        <img class="icon" style="opacity:0.7"src="../../../assets/note/Remind me.svg">
+        <img class="icon"style="opacity:0.7" src="../../../assets/note/collaborator.svg">
 
         <div matTooltip="Background color" [matMenuTriggerFor]="color" style="margin-top:8px;">
-            <img class="icon" src="../../../assets/note/background option.svg">
+            <img class="icon" style="opacity:0.7" src="../../../assets/note/background option.svg">
             <mat-menu #color="matMenu">
                 <div fxLayout="row wrap" style="padding-left: 8px;">
                     <div *ngFor="let color of colorsArr" class="colorBox">
@@ -15,23 +15,23 @@
             </mat-menu>
         </div>
 
-        <img class="icon" src="../../../assets/note/add image.svg">
+        <img class="icon"  style="opacity:0.7" src="../../../assets/note/add image.svg">
 
          <div *ngIf="isDisplayNoteComponent">
-            <img (click)="archieve()" class="icon" style="margin-top:7px;" src="../../../assets/note/archive.svg">
+            <img (click)="archieve()" class="icon" style="margin-top:7px;opacity:0.7;" src="../../../assets/note/archive.svg">
         </div>
         <div *ngIf="isArchieveComponent" >
-            <img (click)="unarchieve()" class="icon" style="margin-top:8px;" src="../../../assets/note/unarchive.svg">
+            <img (click)="unarchieve()" class="icon" style="margin-top:8px;opacity: 0.7;" src="../../../assets/note/unarchive.svg">
         </div>
 
       
         <div>
-            <img  mat-button [matMenuTriggerFor]="menu" class="icon"
+            <img  mat-button [matMenuTriggerFor]="menu" class="icon" style="opacity:0.7"
                     style="margin-top:7px;" src="../../../assets/note/more.svg">
 
             <mat-menu #menu="matMenu">
                 <button mat-menu-item (click)="trash(notedata)">Delete note</button>
-                <button mat-menu-item>(click)="label()"Add label</button>
+                <button mat-menu-item >Add label</button>
                 <button mat-menu-item>add drawing</button>
                 <button mat-menu-item>Show checkboxes</button>
 
@@ -44,7 +44,7 @@
             <div class="icon" mat-icon-button matTooltip="Delete Forever" (click)="delete()"> <img
                     src="../../../assets/note/delete forever.svg">
             </div>
-            <div class="icon" mat-icon-button matTooltip="Restore" (click)="trash(notedata)"> <img
+            <div class="icon" style="opacity:0.7" mat-icon-button matTooltip="Restore" (click)="trash(notedata)"> <img
                     src="../../../assets/note/Restore from trash.svg"></div>
         </div>
     </div>

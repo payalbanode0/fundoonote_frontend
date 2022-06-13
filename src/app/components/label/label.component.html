@@ -7,15 +7,17 @@
         </div>
         <div fxLayout="row" *ngIf="isLable">
             <img  (click)="hideAndShow()" src="../../../assets/label/close.svg" alt="">
-            <input matInput [(ngModel)]="lableName" placeholder="Create note">
+            <input matInput [(ngModel)]="labelName" placeholder="Create Label">
             <img (click)=" onCreate()" src="../../../assets/label/done.svg" alt="">
         </div>
 
     </div>
-    <div  fxLayout="row" fxLayoutAlign="space-between end">
+    <div  fxLayout="row" fxLayoutAlign="space-between end" *ngFor="let Labels of LabelArray">
         <img src="../../../assets/label/newLable.png" alt="" (mouseover)="show()" *ngIf="!isDelete">
-      <img (mouseout)="show()" *ngIf="isDelete" src="../../../assets/label/delete.png" alt="">
-        {{lableName}}
+      <img  (mouseout)="show()" *ngIf="isDelete" src="../../../assets/label/delete.png" alt=""(click)="delete(Labels.labelId)">
+      <div>
+      {{Labels.labelName}}
+      </div>
         <img src="../../../assets/label/edit_FILL0.png" alt="">
 
     </div>

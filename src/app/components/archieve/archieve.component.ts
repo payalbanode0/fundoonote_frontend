@@ -26,5 +26,8 @@ export class ArchieveComponent implements OnInit {
 
     console.log("call api");
   }
-
+  receivedMessage(event: any) {
+    
+    this.getnote();
+}
 }
